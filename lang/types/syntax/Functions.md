@@ -43,3 +43,15 @@ function log(value: string): void {
 log(0); // 0
 log("Hi there!"); // Hi there!
 ```
+
+
+```ts
+function modify<T>(property: string, type: unknown, becomesParam: bool): T {
+     define<T, typeof type>(property, { params: [...T.paramData, { name: property, type: type } ]});
+     return T;
+}
+
+// usage (with our previous Dog class)
+modify<Dog>("age", number, true);
+const dog: Dog = new Dog("Buck");
+```
