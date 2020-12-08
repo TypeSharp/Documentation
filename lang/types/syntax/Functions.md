@@ -10,8 +10,7 @@ function create<T>(params: typeof T.constructor.params): T {
 
 // usage:
 public class Dog extends Animal, Creature {
-     @readonly({ public: true })
-     private name: string;
+     public readonly name: string;
      public constructor(name: string) {
           super as Animal("Dog");
           super as Creature("Biped");
@@ -44,14 +43,46 @@ log(0); // 0
 log("Hi there!"); // Hi there!
 ```
 
+### Function decorators
+A decorator in TypeSharp is a special decleration that is attached to `Methods`, `Classes`, `Functions`, `Properties`, and occasionally `Variables`. A decorator can be defined by using the built in `@define` or implementing the `Typesharp.Decorator` interface into a class.
 
+An example of this could be logging Structures or Classes to commandline.
 ```ts
-function modify<T>(property: string, type: unknown, becomesParam: bool): T {
-     define<T, typeof type>(property, { params: [...T.paramData, { name: property, type: type } ]});
-     return T;
-}
+@define
+function logStructure(json: JSON, asString?: boolean): string? {
+     let logString: string = "";
+     logString .= COLOR.GREY . "{\r\n";
+     // because typesharp acts like javascript, you can treat
+     // json almost the exact same way.
+     for (let [ key: string, value: JSON.any ] of json) {
+          // weird spacing so we can visualize
+          logString .= "\r\n" . COLOR.BLUE . `  "${key}"${COLOR.WHITE}: ` . COLOR.AQUA . ((value instanceof JSON) ? logStructure(json, true) : value.toString());
+     }
 
-// usage (with our previous Dog class)
-modify<Dog>("age", number, true);
-const dog: Dog = new Dog("Buck");
+     logString .= "\r\n" . COLOR.GREY . "}"
+
+     if (asString) {
+          return logString;
+     } else {
+          print!(logString);
+     }
+}
 ```
+
+Now we can use `@logStructure` on JSON objects. Heres an example:
+```ts
+@logStructure
+const options: JSON = {
+     key: "value",
+     key2: {
+          nestedKey: nestedValue
+     },
+     key3: {
+          nestedKey_deep: {
+               // @ = circular reference to self on outer most key
+               superNested: @key2.nestedKey
+          }
+     }
+}
+```
+The code above logs the JSON structure of `options` when it becomes defined by the compiler. For more information on decorators in typesharp, goto [our decorator page]().
