@@ -36,4 +36,4 @@ Now that we have our project initialized, we can test/run it by:
 
 2. Executing the binary built in the newly created directory called `bin`, which includes a binary to be shared, in this case it's a `.exe` file.
 
-   ![](https://raw.githubusercontent.com/TypeSharp/Documentation/master/assets/hello_world_run.gif?token=AD7GXXQOJWERKUQ2VDYCRM3ALFMXQ)
+   ![](https://i.imgur.com/dFzxe1j.gif)
