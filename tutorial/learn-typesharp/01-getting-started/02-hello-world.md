@@ -37,3 +37,5 @@ Now that we have our project initialized, we can test/run it by:
 2. Executing the binary built in the newly created directory called `bin`, which includes a binary to be shared, in this case it's a `.exe` file.
 
    ![](https://i.imgur.com/dFzxe1j.gif)
+
+## 

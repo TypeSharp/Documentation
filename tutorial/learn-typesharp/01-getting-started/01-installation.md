@@ -2,7 +2,7 @@
 
 In order to use TypeSharp, you must install it first. This guide will use the official [Typesharp CLI]() for managing typesharp versions, and associated utilities.
 
-## Installing *t#*
+## Installing *T#*
 
 [TypeSharp CLI]() is TypeSharp's command line interface / package manager that can be invoked using `t#` or `ts` in command line.
 
