@@ -30,9 +30,9 @@ Hello, world!
 
 By default, TypeSharp does **not** implement any utilities for generating random numbers, you'll need to include this from the standard library! You can achieve this in one of the following ways:
 
-	- Using the "use" keyword, for example: `use std.math`
-	- Using the "import" keyword, which acts a lot like javascript: `import math from std`
-	- Using the "import" keyword, with js-like syntax: `import { math } from 'std'`
+- Using the "use" keyword, for example: `use std.math`
+- Using the "import" keyword, which acts a lot like javascript: `import math from std`
+- Using the "import" keyword, with js-like syntax: `import { math } from 'std'`
 
 With that said, we're going to stick to the first way, and the most standardized way of importing in TypeSharp. In your `src/mod.ts` file, add:
 
