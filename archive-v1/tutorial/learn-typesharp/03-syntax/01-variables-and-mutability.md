@@ -25,7 +25,7 @@ Error! [93]: Assignment to property on "mutate_me" as an immutable variable afte
 1 |		const mutate_me: Object = {
   |							 ~~~
   \____________________________^^^^
-  | ---> First Assignment is made here
+  | ---> First Assignment is made here.
   | ---> SP > Try making this a mutable variable with "let".
   |
 6 |		mutate_me.x += 1;
@@ -35,11 +35,6 @@ Error! [93]: Assignment to property on "mutate_me" as an immutable variable afte
   | ---> SP > Try removing this statement.
 
 Error: Tried re-assigning to a constant property after declaration.
-
-----------------------------------------------------------------------------------
-If no solutions are provided please end kill me and tell me what caused the error.
-TypeSharp is still in development so you're seeing this cause ur cool
-----------------------------------------------------------------------------------
 ```
 
 While Typesharp will do it's best to provide you the best solution, it's not perfect. It will make mistakes, however for minor things like this, TypeSharp was able to identify the error, and give us the solution! So let's plug it in and test our code, the code should now look like the following:
@@ -51,6 +46,8 @@ const mutate_me: Object = {
 };
 
 mutate_me.x += 1;
+
+println(mutate_me.toString({ format: "inspect" }));
 ```
 
 Which will execute successfully with an exit code of 0.

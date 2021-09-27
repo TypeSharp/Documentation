@@ -1,0 +1,5 @@
+[output.html]
+theme = "./theme"
+default-theme = "ayu"
+preferred-dark-theme = "ayu"
+additional-js = ["typesharp.js"]
