@@ -27,6 +27,7 @@
   - [Instance Types](ch05-06-instancing.md)
 
 ## Advanced Topics
+ - [Building Sites](cha01-00-Building Websites.md)
 
-
-
+## Beta features and concepts
+- [A new approach to building websites](ch-beta-wapp.md)
